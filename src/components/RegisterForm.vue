@@ -1,6 +1,7 @@
 <template>
   <section class="register">
     <h1>Регистрация</h1>
+    <div class="space-30"></div>
     <form @submit.prevent="sendData">
       <span>
         <img src="../assets/icons/user.svg">
@@ -10,6 +11,8 @@
           v-model.trim="username" 
           maxlength="32"/>
       </span>
+      <h6>*не более 32 символов</h6>
+      <div class="space-30"></div>
       <span>
         <img src="../assets/icons/email.svg">
         <input type="text" 
@@ -18,6 +21,8 @@
           v-model="watchEmail"
           maxlength="32"/>
       </span>
+      <h6>*не содержит специальных символов</h6>
+      <div class="space-30"></div>
       <span>
         <img src="../assets/icons/password.svg">
         <input type="password" 
@@ -26,6 +31,8 @@
           v-model="watchPassword"
           maxlength="32"/>
       </span>
+      <h6>*латиница, не менее 8 символов</h6>
+      <div class="space-30"></div>
       <span>
         <img src="../assets/icons/password.svg">
         <input type="password" 
@@ -34,6 +41,8 @@
         v-model="watchPasswordRepeat" 
         maxlength="32"/>
       </span>
+      <h6>*латиница, не менее 8 символов</h6>
+      <div class="space-30"></div>
       <div>
         <input type="submit" 
           value="Зарегистрироваться" 
@@ -100,19 +109,22 @@ export default {
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 239, 219);
-    padding: 20px;
+    padding-left: 20px; padding-right: 20px;
     border-radius: 10px;
-    min-width: 400px;
-    box-shadow: 10px 10px 10px rgb(205, 205, 205);
+    height: 100%;
+    width: 100%;
   }
   h1 {
     font-size: 24pt;
     margin-bottom: 20px;
     text-align: center;
   }
-  div, span {
-    margin-top: 30px; margin-bottom: 10px;
-    margin-left: 10px; margin-right: 10px;
+  h6 {
+    margin: 4px;
+    padding: 0;
+  }
+  .space-30 {
+    height: 30px;
   }
   span {
     display: flex;
@@ -144,5 +156,10 @@ export default {
   img {
     height: 20px; width: 20px;
   }
-
+  @media screen and (min-width: 768px) {
+    section {
+      max-height: 516px;
+      max-width: 450px;
+    }
+  }
 </style>

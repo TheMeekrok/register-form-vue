@@ -26,8 +26,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70vw;
-  height: 100vh;
+  height: 100vh; width: 100%;
   margin: auto;
 }
 #app {
@@ -35,5 +34,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  width: 100vw; height: 100vh; 
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 70%;
+  }
 }
 </style>
